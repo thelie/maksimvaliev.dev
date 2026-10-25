@@ -91,7 +91,7 @@ h3 { font-size: 21px; line-height: 1.2; font-weight: 600; letter-spacing: -.011e
 .hero { padding: clamp(80px, 14vw, 160px) 22px clamp(80px, 12vw, 140px); text-align: center; }
 .hero h1 {
   margin-top: 8px;
-  font-size: clamp(48px, 9vw, 96px);
+  font-size: clamp(36px, 12vw, 96px); /* the longest word, "Разрабатываю", is 6.8em: fits from 240px up */
   line-height: 1.04;
   font-weight: 700;
   letter-spacing: -.03em;

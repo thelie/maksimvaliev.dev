@@ -1,9 +1,9 @@
 # maksimvaliev.dev
 
-Personal site, and a single self-contained binary: Rust + Axum, with HTTPS and Let's Encrypt built in.
+Personal site, and a single self-contained binary: Rust + Axum, with optional built-in HTTPS and Let's Encrypt.
 
 - **Compile-time rendering.** `build.rs` renders every page from `content/*.toml`, compresses each with Brotli (q11) and gzip (level 9), and embeds the bytes. At runtime the server only picks a pre-built response — no templating, no compression, no startup work.
-- **TLS in the binary.** With `ACME_DOMAIN` set, it obtains and renews certificates itself (TLS-ALPN-01 via `rustls-acme`), serves HTTP/2 + HTTP/1.1 on :443 and redirects :80. No reverse proxy, no certbot.
+- **TLS in the binary.** With `ACME_DOMAIN` set, it obtains and renews certificates itself (TLS-ALPN-01 via `rustls-acme`), serves HTTP/2 + HTTP/1.1 on :443 and redirects :80, with no reverse proxy or certbot. Production runs behind a proxy instead (see Ship).
 - **Static.** The Docker build produces a musl binary with no glibc dependency — copy it to any Linux box.
 - **Self-describing.** `/status` reports version, commit, binary size and uptime; `/source` serves the exact sources it was built from.
 

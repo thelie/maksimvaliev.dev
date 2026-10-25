@@ -3,8 +3,8 @@
 
 name = "Maksim Valiev"
 role = "Frontend Developer · AI Automation"
-headline = "Vue interfaces.\nAI that saves hours."
-intro = "Six years of frontend work, four of them in Vue, including the redesign of bigbilet.ru. Now I build AI automation for businesses: short-video editing, bots, analytics. Looking for a frontend role and taking freelance projects."
+headline = "I build interfaces.\nAnd AI that saves hours."
+intro = "Six years of frontend work, including the redesign of bigbilet.ru. Now I build AI automation for businesses: short-video editing, bots, analytics. Looking for a frontend role and taking freelance projects."
 location = "Chelyabinsk, UTC+5"
 email = "maxim.valiev.a@gmail.com"
 url = "https://maksimvaliev.dev"
@@ -50,12 +50,12 @@ url = "https://www.instagram.com/maksimvaliev.dev/"
 # ── Services ─────────────────────────────────────────────────────────────────
 [about]
 title = "How I can help."
-lead = "Teams need frontend; businesses need less manual work. I do both: Vue interfaces, and AI automation built around a specific task."
+lead = "Teams need frontend; businesses need less manual work. I do both: interfaces, and AI automation built around a specific task."
 
 [[about.items]]
 symbol = "◐"
-title = "Vue frontend"
-text = "Interfaces, layout and site redesigns. Six years of frontend, four of them in Vue."
+title = "Interfaces and websites"
+text = "Interfaces, layout and site redesigns. Six years of commercial work."
 
 [[about.items]]
 symbol = "▶"
@@ -126,7 +126,7 @@ theme = "light"
 [[projects]]
 name = "This website"
 tagline = "One binary. That's it."
-description = "Rust and Axum, with every byte of HTML and CSS baked in at compile time. HTTPS and Let's Encrypt certificates live in the same binary."
+description = "Rust and Axum, with every byte of HTML and CSS baked in at compile time. It can get Let's Encrypt certificates on its own, but here it runs behind a reverse proxy, sharing a server with another site."
 tags = ["Rust", "Axum", "Maud"]
 url = "https://github.com/thelie/maksimvaliev.dev"
 theme = "blue"
