@@ -1,0 +1,223 @@
+# English content. Compiled into the binary — edit, then `cargo build --release`.
+# Keep content/ru.toml in sync. TODO marks what still needs confirming.
+
+name = "Maksim Valiev"
+role = "Frontend Developer · AI Automation"
+headline = "Vue interfaces.\nAI that saves hours."
+intro = "Six years of frontend work, four of them in Vue, including the redesign of bigbilet.ru. Now I build AI automation for businesses: short-video editing, bots, analytics. Looking for a frontend role and taking freelance projects."
+location = "Chelyabinsk, UTC+5"
+email = "maxim.valiev.a@gmail.com"
+url = "https://maksimvaliev.dev"
+
+# Interface strings
+[ui]
+nav_about = "Services"
+nav_work = "Cases"
+nav_resume = "Résumé"
+nav_contact = "Contact"
+see_work = "See the cases"
+get_in_touch = "Get in touch"
+work_title = "Cases."
+work_lead = "The problem, how I solved it, and what came out of it."
+learn_more = "Learn more"
+resume_title = "Résumé."
+skills = "Skills"
+education = "Education"
+contact_title = "Let's talk."
+contact_lead = "Hiring a frontend developer, or have a task that's overdue for automation? Telegram is the fastest way to reach me."
+footer_note = "Built with Rust & Axum. Served from a single binary."
+source = "Source"
+not_found_title = "This page isn't here."
+not_found_lead = "But plenty of other good things are."
+not_found_back = "Back to home"
+
+[[links]]
+label = "Telegram"
+url = "https://t.me/thelie"
+
+[[links]]
+label = "GitHub"
+url = "https://github.com/thelie"
+
+[[links]]
+label = "LinkedIn"
+url = "https://www.linkedin.com/in/maksim-valiev-79303898"
+
+[[links]]
+label = "Instagram"
+url = "https://www.instagram.com/maksimvaliev.dev/"
+
+# ── Services ─────────────────────────────────────────────────────────────────
+[about]
+title = "How I can help."
+lead = "Teams need frontend; businesses need less manual work. I do both: Vue interfaces, and AI automation built around a specific task."
+
+[[about.items]]
+symbol = "◐"
+title = "Vue frontend"
+text = "Interfaces, layout and site redesigns. Six years of frontend, four of them in Vue."
+
+[[about.items]]
+symbol = "▶"
+title = "Automated short-video editing"
+text = "Raw footage in; finished Reels, TikTok and Stories clips out, without the pauses and filler words."
+
+[[about.items]]
+symbol = "✦"
+title = "AI bots on your documents"
+text = "A bot that answers customers and staff from your knowledge base (RAG) and shows where each answer came from."
+
+[[about.items]]
+symbol = "⌘"
+title = "Data analytics"
+text = "Market, competitors, sales: I gather the data and turn it into conclusions you can act on."
+
+# ── Cases ────────────────────────────────────────────────────────────────────
+# The first case is featured and shown larger. theme: "dark" | "light" | "blue"
+[[projects]]
+name = "GAURÉ"
+tagline = "Marketing on a zero ad budget."
+description = "Anastasia Shlotgauer's nutrition system, sold as ready-made meal plans delivered across Chelyabinsk, needed orders without an advertising budget. I made the promotion strategy, a brand book, Instagram reels and carousels, and the gaurefood.ru website: PageSpeed 100 on mobile and desktop, A+ on SSL Labs, Mozilla Observatory and securityheaders.com."
+tags = ["Python", "Remotion", "SEO", "Linux"]
+url = "https://gaurefood.ru"
+theme = "dark"
+# TODO: the business result (orders from the site, tracked by the "Пишу с сайта" tag; reel stats).
+
+[[projects]]
+name = "artbot"
+tagline = "Raw footage in. Reels out."
+description = "A Telegram bot and Mini App that turn raw talking-head footage into a finished Reel: they cut pauses and filler words and add subtitles, a hook and cards. Word-level speech recognition, an edit plan from an LLM, rendering with FFmpeg. In development; before it, I edited the GAURÉ reels in Remotion together with Claude."
+tags = ["Python", "FastAPI", "React", "TypeScript", "FFmpeg"]
+theme = "dark"
+# TODO: a link and the result once the bot reaches beta.
+
+[[projects]]
+name = "Bigbilet"
+tagline = "Five products in four years."
+description = "Frontend for bigbilet.ru, the company's core ticketing product: the redesign and a ticket panel with seating charts. Plus the new products it launched to diversify: the Pro.HR recruiting-automation platform, the CloSYS online shop, and ChadoBOX and BiblioLeto, motivation platforms for kids. bigbilet.ru is still live; the new products have closed."
+tags = ["Vue 2", "Vuex", "Webpack", "Jest"]
+url = "https://bigbilet.ru"
+theme = "light"
+# TODO: measurable results (conversion, speed, user numbers).
+
+[[projects]]
+name = "Syntax Reader"
+tagline = "Speed reading, honestly measured."
+description = "A reader for iOS and macOS. It tracks reading speed per session and per book, estimates the time left to finish a book, offers a pacer and RSVP, and highlights parts of speech the way an IDE highlights code. I tested the highlighting idea first on a web prototype with an A/B test: a 4×4 Latin square measuring speed and comprehension. In development."
+tags = ["Swift", "SwiftUI", "Core Text", "Python", "Natasha"]
+theme = "light"
+
+[[projects]]
+name = "Bread market analysis"
+tagline = "Data to make decisions on."
+description = "Pro bono market analysis for a regional bread producer. The company used the results in its work."
+tags = ["Python", "Data analysis"]
+theme = "light"
+# TODO: whether the company can be named (Russkiy Khleb).
+
+[[projects]]
+name = "Rust CLI"
+tagline = "Tiny. Useful."
+description = "Tools that export Safari's Reading List and Telegram Saved Messages to Markdown files."
+tags = ["Rust", "CLI"]
+url = "https://github.com/thelie?tab=repositories&language=rust"
+theme = "light"
+
+[[projects]]
+name = "This website"
+tagline = "One binary. That's it."
+description = "Rust and Axum, with every byte of HTML and CSS baked in at compile time. HTTPS and Let's Encrypt certificates live in the same binary."
+tags = ["Rust", "Axum", "Maud"]
+url = "https://github.com/thelie/maksimvaliev.dev"
+theme = "blue"
+
+# ── Résumé ───────────────────────────────────────────────────────────────────
+[[experience]]
+role = "AI automation, own projects"
+company = "Self-employed"
+period = "2025 — Present"
+location = "Remote"
+highlights = [
+  "Promoting GAURÉ, a meal-delivery service in Chelyabinsk: strategy, brand book, Instagram reels and carousels. Designed and built the gaurefood.ru website with AI assistants: PageSpeed 100, A+ on SSL Labs and Mozilla Observatory.",
+  "Building artbot with AI assistants: a Telegram bot and Mini App for automated Reels editing, with speech recognition, an LLM edit plan, FFmpeg rendering and a React and TypeScript interface.",
+  "Did a market analysis for a regional bread producer; the company used the results in its work.",
+  "Building Syntax Reader with AI assistants: a reader for iOS and macOS with reading-speed metrics, speed-reading modes and part-of-speech highlighting.",
+]
+
+[[experience]]
+role = "Frontend Developer"
+company = "Bigbilet"
+period = "September 2017 — July 2021"
+highlights = [
+  "Redesigned bigbilet.ru, the company's core product, and built the ticket-sales frontend: widgets, promo codes, refunds, mobile layouts.",
+  "A ticket panel in Vue: event calendar, ticket page, seating chart.",
+  "The CloSYS online shop in Vue and Vuex: catalogue, cart, sections for business and private customers, blog, partner-store list.",
+  "ChadoBOX and BiblioLeto, motivation platforms for kids: Vue sites with prerendered pages for search engines.",
+  "Pro.HR, a recruiting-automation platform: the web app frontend, a candidate survey in Vue, a Chrome extension for inviting candidates, landing pages.",
+  "Email templates for Bigbilet and Pro.HR; a landing page for dental clinics.",
+  "Stack: Vue 2, Vuex, Vue Router, Webpack, Jest, SCSS.",
+]
+# TODO: measurable results.
+
+[[experience]]
+role = "Frontend Developer"
+company = "Dextra, digital agency"
+period = "May 2016 — August 2017"
+highlights = [
+  "Page layout and frontend for client sites on the agency's in-house PHP engine.",
+  "Stack: HTML, CSS, JavaScript, PHP templates.",
+]
+
+[[experience]]
+role = "Frontend Developer"
+company = "UNIT6"
+period = "April 2015 — March 2016"
+highlights = [
+  "Mostly layout, some frontend: projects in AngularJS and React with a .NET backend and Razor templates.",
+]
+
+[[experience]]
+role = "System Administrator"
+company = "Chelyabinsk State University"
+period = "2012 — 2014"
+highlights = [
+  "Ran the network: Linux, Cisco and D-Link hardware, Motorola Wi-Fi.",
+]
+
+# TODO: check the exact programme names against the diplomas.
+[[education]]
+degree = "C++ Developer"
+school = "Yandex Practicum, professional retraining"
+period = "2024"
+
+[[education]]
+degree = "Python Developer"
+school = "Yandex Practicum, professional retraining"
+period = "2023"
+
+[[education]]
+degree = "Data Science"
+school = "Yandex Practicum, professional retraining"
+period = "2021"
+
+[[education]]
+degree = "Master's degree"
+school = "Chelyabinsk State University"
+period = "2012"
+# TODO: the field of study, from the diploma.
+
+[[skills]]
+group = "Frontend"
+items = ["Vue 2", "Vuex", "Vue Router", "JavaScript (ES6+)", "Webpack", "Jest", "HTML", "CSS", "SCSS"]
+
+[[skills]]
+group = "Currently learning"
+items = ["Vue 3", "TypeScript", "Pinia", "Vite", "Nuxt 3"]
+
+[[skills]]
+group = "AI & data"
+items = ["Python", "Speech recognition", "LLM APIs", "FFmpeg", "Natasha", "Local models", "A/B testing", "Remotion"]
+
+[[skills]]
+group = "Tools"
+items = ["Rust", "Swift (SwiftUI)", "Linux", "Docker", "Git"]

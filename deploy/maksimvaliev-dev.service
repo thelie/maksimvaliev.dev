@@ -1,0 +1,43 @@
+# /etc/systemd/system/maksimvaliev-dev.service
+#
+#   cp dist/maksimvaliev-dev /usr/local/bin/
+#   systemctl enable --now maksimvaliev-dev
+#
+# Runs behind the pingap reverse proxy on a shared Selectel server:
+# plain HTTP on 127.0.0.1:8090, while pingap terminates TLS for maksimvaliev.dev and certbot
+# issues the certificate. The binary can't pick its bind address, so the sandbox below allows
+# loopback traffic only.
+#
+# On a server of its own, the binary can serve HTTPS itself instead: drop PORT and the IPAddress*
+# lines, set ACME_DOMAIN=maksimvaliev.dev, ACME_CACHE=/var/lib/maksimvaliev-dev, add
+# StateDirectory=maksimvaliev-dev and AmbientCapabilities/CapabilityBoundingSet=CAP_NET_BIND_SERVICE.
+
+[Unit]
+Description=maksimvaliev.dev
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/maksimvaliev-dev
+Environment=PORT=8090
+Restart=always
+
+DynamicUser=yes
+IPAddressDeny=any
+IPAddressAllow=localhost
+CapabilityBoundingSet=
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_INET AF_INET6
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+SystemCallArchitectures=native
+
+[Install]
+WantedBy=multi-user.target
