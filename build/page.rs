@@ -64,6 +64,7 @@ pub fn index(c: &Content, lang: Lang, build: &Build) -> String {
                     ul {
                         li { a href="#about" { (ui.nav_about) } }
                         li { a href="#work" { (ui.nav_work) } }
+                        @if let Some(pr) = &c.prices { li { a href="#prices" { (pr.nav) } } }
                         li { a href="#resume" { (ui.nav_resume) } }
                         li { a href="#contact" { (ui.nav_contact) } }
                     }
@@ -119,7 +120,33 @@ pub fn index(c: &Content, lang: Lang, build: &Build) -> String {
                 }
             }
 
-            section.section.alt #resume {
+            @if let Some(pr) = &c.prices {
+                section.section.alt #prices {
+                    div.wrap {
+                        h2.reveal { (pr.title) }
+                        p.lead.reveal { (pr.lead) }
+                        div.grid {
+                            @for item in &pr.items {
+                                div.tile.price.reveal {
+                                    h3 { (item.name) }
+                                    p.amount { (item.price) }
+                                    p.meta { (item.term) }
+                                    p { (item.text) }
+                                }
+                            }
+                        }
+                        @if !pr.included.is_empty() {
+                            div.card.included.reveal {
+                                h3 { (pr.included_title) }
+                                ul.chips { @for i in &pr.included { li { (i) } } }
+                                p.meta { (pr.note) }
+                            }
+                        }
+                    }
+                }
+            }
+
+            section class={ "section" @if c.prices.is_none() { " alt" } } #resume {
                 div.wrap {
                     h2.reveal { (ui.resume_title) }
                     div.resume {
@@ -166,7 +193,7 @@ pub fn index(c: &Content, lang: Lang, build: &Build) -> String {
                 }
             }
 
-            section.section.contact #contact {
+            section class={ "section contact" @if c.prices.is_some() { " alt" } } #contact {
                 div.wrap {
                     h2.reveal { (ui.contact_title) }
                     p.lead.reveal { (ui.contact_lead) }

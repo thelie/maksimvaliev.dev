@@ -21,6 +21,8 @@ pub struct Content {
     #[serde(default)]
     pub links: Vec<Link>,
     pub about: About,
+    /// Price list; a language without it shows no prices section and no nav link.
+    pub prices: Option<Prices>,
     #[serde(default)]
     pub projects: Vec<Project>,
     #[serde(default)]
@@ -72,6 +74,26 @@ pub struct About {
 pub struct AboutItem {
     pub symbol: String,
     pub title: String,
+    pub text: String,
+}
+
+#[derive(Deserialize)]
+pub struct Prices {
+    pub nav: String,
+    pub title: String,
+    pub lead: String,
+    pub items: Vec<PriceItem>,
+    pub included_title: String,
+    #[serde(default)]
+    pub included: Vec<String>,
+    pub note: String,
+}
+
+#[derive(Deserialize)]
+pub struct PriceItem {
+    pub name: String,
+    pub price: String,
+    pub term: String,
     pub text: String,
 }
 
